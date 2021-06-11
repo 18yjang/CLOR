@@ -26,3 +26,13 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
   2. 단일 이미지 분석
   3. 모델 학습량 증가
   4. 그래픽 결과가 아닌 카테고리 분류
+
+## 의류 주요 색상 추출 - C'LOR_Extracting_DominantColor.ipynb
+- K-Means Clustering 알고리즘을 적용
+
+## 의류 영역 추출 - Clothes Detection Trial
+- 세가지 방법 사용 : OpenCV 라이브러리 내 함수, ConvexHull algorithm, GrabCut 알고리즘
+- 문제 있어 다른 방안 필요(6.11)
+- 고려 중인 방법
+  1. 모델을 돌려 얻어낸 heatmap을 직접 활용
+  2. 이미지를 개별 픽셀로 접근해 색상을 추출
