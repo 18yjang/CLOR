@@ -1,0 +1,24 @@
+<html>
+   <body>
+      <form action = "http://192.168.0.160:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
+         <!-- multipart/form-data: 모든 문자를 인코딩하지 않음을 명시함. -->
+         <!-- <form> 요소가 파일이나 이미지를 서버로 전송할 때 사용함. -->
+         <!-- 이 코드를 작성하지 않으면 파일의 이름만 전송되고 파일 데이터는 전송되지 않음.-->
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+         <br>
+ 
+         {% with messages = get_flashed_messages() %} 
+         {% if messages %}
+             <ul>
+               {% for msg in messages %}
+                <li><strong>Error: </strong>{{ msg }}</li> <!--flash 메시지 출력-->
+                {% endfor %}
+             </ul>
+         {% endif %}
+         {% endwith %}
+ 
+      </form>
+   </body>
+</html>

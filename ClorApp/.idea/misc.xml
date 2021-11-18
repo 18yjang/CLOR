@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR/app/src/main/res/layout/activity_main.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR/app/src/main/res/layout/fragment2.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR/app/src/main/res/layout/fragment3.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR/app/src/main/res/menu/menu_bottom.xml" value="0.4" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR3/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR3/app/src/main/res/layout/fragment2.xml" value="0.1" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR3/app/src/main/res/menu/menu_bottom.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/font/bowlby_one.xml" value="0.2838541666666667" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/edittext.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/fragment2.xml" value="0.2" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/fragment3.xml" value="0.21195652173913043" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/note_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/show_result.xml" value="0.264" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/show_result2.xml" value="0.264" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR5/app/src/main/res/layout/show_result3.xml" value="0.4" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/fragment1.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/fragment2.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/fragment3.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/note_item.xml" value="0.23505434782608695" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/show_result.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/show_result2.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR7/app/src/main/res/layout/show_result3.xml" value="0.264" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/drawable/select_button.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/font/bowlby_one.xml" value="0.1" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/activity_main.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/fragment1.xml" value="0.4" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/fragment2.xml" value="0.23278985507246377" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/note_item.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/show_closet.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/show_result.xml" value="0.536" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/show_result2.xml" value="0.4" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/show_result3.xml" value="0.21041666666666667" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/C'LOR8/app/src/main/res/layout/view_db.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2/app/src/main/res/layout/fragment1.xml" value="0.11423505572441743" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2/app/src/main/res/layout/fragment2.xml" value="0.11423505572441743" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2/app/src/main/res/layout/fragment3.xml" value="0.264" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2/app/src/main/res/layout/note_item.xml" value="0.1" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2/app/src/main/res/menu/menu_bottom.xml" value="0.1" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2_Revised/app/src/main/res/layout/activity_main.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2_Revised/app/src/main/res/layout/fragment2.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2_Revised/app/src/main/res/layout/fragment3.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2_Revised/app/src/main/res/layout/note_item.xml" value="0.2463768115942029" />
+        <entry key="..\:/Users/44yrl/AndroidStudioProjects/SingleDiary2_Revised/app/src/main/res/menu/menu_bottom.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/whaze/OneDrive/Documents/GitHub/clor2/app/src/main/res/layout/fragment1.xml" value="0.16770833333333332" />
+        <entry key="..\:/Users/whaze/OneDrive/Documents/GitHub/clor2/app/src/main/res/layout/show_result3.xml" value="0.16770833333333332" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

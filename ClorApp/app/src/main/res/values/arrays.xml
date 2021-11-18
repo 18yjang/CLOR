@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="switch_tabs">
+        <item>내용</item>
+        <item>사진</item>
+    </string-array>
+    <string-array name="categories">
+        <item>티셔츠</item>
+        <item>맨투맨</item>
+        <item>후드티</item>
+        <item>블라우스</item>
+        <item>셔츠</item>
+        <item>조끼</item>
+        <item>바지</item>
+        <item>치마</item>
+    </string-array>
+    <string-array name="array_photo">
+        <item>사진 찍기</item>
+        <item>앨범에서 선택하기</item>
+    </string-array>
+    <string-array name="array_photo_ex">
+        <item>사진 찍기</item>
+        <item>앨범에서 선택하기</item>
+        <item>사진 삭제하기</item>
+    </string-array>
+</resources>
