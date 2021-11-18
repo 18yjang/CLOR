@@ -51,7 +51,7 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 ## 어플리케이션 – ClorApp
 - 안드로이드 스튜디오 이용해 작업
 - 어플리케이션 실행 순서도
-- 
+
  ![image](https://user-images.githubusercontent.com/79851987/142370389-13c45500-4e37-4565-a6e6-2dd9dfed18be.png)
 
 ## 웹 – web.py
