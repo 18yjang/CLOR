@@ -1,4 +1,4 @@
-# C'LOR
+# ⭐C'LOR⭐
 #### 이화여자대학교 컴퓨터공학전공 졸업프로젝트
 #### 5팀 이화스터디 : 1870079 장윤주, 1876300 이유림
 
@@ -31,24 +31,24 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 - 장윤주 : https://jmarble-dev.tistory.com/3, https://jmarble-dev.tistory.com/5
 - 이유림 : https://emmee.tistory.com/2, https://emmee.tistory.com/3
 
-## 딥러닝 부분 (FCN)   -  C'LOR_Classification_Model.ipynb
+## 🔎 딥러닝 부분 (FCN)   -  C'LOR_Classification_Model.ipynb
 - 의류 이미지를 입력받으면 모델이 의상을 분석하고 제공함.
 - tensor + keras 적용
 - 현재 데이터셋 폴더 입력받아 학습 및 검증 결과 그래프로 도출
 - 데이터 전처리에는 labelme 모듈을 사용
 
-## 의류 영역 추출 – GrabCut
+## 🔎 의류 영역 추출 – GrabCut
 -  OpenCV 라이브러리의 Grabcut을 이용해 의류 영역을 제외한 공간을 삭제
 
-## 의류 주요 색상 추출 – Dominant Color
+## 🔎 의류 주요 색상 추출 – Dominant Color
 - K-Means Clustering 알고리즘을 적용
 - OpenCV 라이브러리 이용
 
-## 색상 조합 알고리즘 – Color Table
+## 🔎 색상 조합 알고리즘 – Color Table
 - CIE Lab Space 변환
 - 기준 색상값과의 color difference 이용
 
-## 어플리케이션 – ClorApp
+## 🧤 어플리케이션 – ClorApp
 - 안드로이드 스튜디오 이용해 작업
 - 어플리케이션 실행 순서도
 
@@ -63,7 +63,7 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 
 
 
-## 웹 – web.py
+## 🧢 웹 – web.py
 - 플라스크를 이용한 웹 서버 구축
 - 주요 작업 웹에서 진행
 
