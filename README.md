@@ -53,13 +53,16 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 - 어플리케이션 실행 순서도
 
  1. 옷 추가 기능
+ 
  ![image](https://user-images.githubusercontent.com/79851987/142370389-13c45500-4e37-4565-a6e6-2dd9dfed18be.png)
  
  2. 옷장 기능
- ![KakaoTalk_20211123_154409573_02](https://user-images.githubusercontent.com/79851987/144371746-9ad4fe29-f955-42a2-abfa-09a773472795.jpg)
+ 
+ ![image](https://user-images.githubusercontent.com/79851987/144371991-f0b95c2b-496b-450d-a8d9-1727f8aa1e85.png)
  
  3. 통계 기능
-![KakaoTalk_20211123_154409573_03](https://user-images.githubusercontent.com/79851987/144371749-06258f15-eb7a-47e2-a0d5-f6acf416a2fa.jpg)
+ 
+![image](https://user-images.githubusercontent.com/79851987/144372031-f50f9ad6-23d6-4a86-a963-29c690f43dc8.png)
 
 
 ## 웹 – web.py
