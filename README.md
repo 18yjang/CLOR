@@ -11,20 +11,21 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 
 ## 구조
 저희 프로그램 구조는 다음과 같습니다. 
+<p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370269-82b5211f-b029-41f4-ab4c-1adc7521d043.png" width="40%" height="40%">
 
-![image](https://user-images.githubusercontent.com/79851987/142370269-82b5211f-b029-41f4-ab4c-1adc7521d043.png)
-
+	
 사용자가 의류사진을 입력하면 이미지가 안드로이드에서 Flask 기반 웹서버로 넘어가게 됩니다. 케라스와 텐서플로, 파이썬으로 작성된 모델들을 거쳐 입력된 사진의 카테고리와 주요 색상, 어울리는 색상의 목록과 함께 앱으로 돌아오게 됩니다. 사용자는 보색과 유사색 중 한가지의 색 조합을 선택하게되며, 추천되는 3가지의 색조합 중 하나를 선택해 일러스트로 감상할 수 있습니다.
-						
-## 개발 상세
 
-![image](https://user-images.githubusercontent.com/79851987/142370314-272081d0-9dfa-4338-87b1-e53472eb3bb7.png)
+	
+## 개발 상세
+<p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370314-272081d0-9dfa-4338-87b1-e53472eb3bb7.png" width="40%" height="40%">
+	
 
 저희 프로그램은 사용자가 사진을 업로드만 하면 해당 의상의 카테고리와 색상을 검출하여 제공합니다. GrabCut과 FCN모델을 사용하여 카테고리 분류를 원활하게 하였고, K-means Clustering을 통해 색상의 비율을 얻어내 비율이 가장 큰 색상을 사용자에게 제공하게 됩니다. 분류되는 카테고리는 이처럼 큰 범주로는 상하의로 나뉘며, 그 내부에서 총 9가지의 카테고리로 분류됩니다. 두번째로는 문제 삼았던 소모 시간을 해소하기 위해 한눈에 특징이 드러나도록 구성하였습니다. 3가지의 추천을 원색과 함께 제공하여 눈으로 매칭할 수 있으며 평균 색상이 아닌 특유의 색상을 입력해 얻은 결과이므로 사용자 맞춤 결과가 제공됩니다. 최종적으로 상하의 일러스트까지 제공해 착용시 어떤 느낌을 줄 수 있는지 파악 가능합니다. 또한 색감에 대한 개인의 취향을 고려해 보색과 유사색 조합을 선택할 수 있도록 하였고, 사용자가 선택했던 조합들을 데이터 베이스에 남겨 만족도와 전체적인 통계를 제공합니다. 	
 
 					
 ## 예상 시나리오 – flow chart
- <p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370338-83038c9f-db43-4397-b71c-018088caadee.png" width="100%" height="100%">
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370338-83038c9f-db43-4397-b71c-018088caadee.png" width="60%" height="60%">
 
 ## 기술블로그
 - 장윤주 : https://jmarble-dev.tistory.com/3, https://jmarble-dev.tistory.com/5
@@ -56,10 +57,10 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
  <p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370389-13c45500-4e37-4565-a6e6-2dd9dfed18be.png" width="100%" height="100%">
  
  2. 옷장 기능
- <p align="center"><img src="https://user-images.githubusercontent.com/79851987/144371991-f0b95c2b-496b-450d-a8d9-1727f8aa1e85.png" width="50%" height="50%">
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/144371991-f0b95c2b-496b-450d-a8d9-1727f8aa1e85.png" width="30%" height="30%">
  
  3. 통계 기능
- <p align="center"><img src="https://user-images.githubusercontent.com/79851987/144372031-f50f9ad6-23d6-4a86-a963-29c690f43dc8.png" width="50%" height="50%">
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/144372031-f50f9ad6-23d6-4a86-a963-29c690f43dc8.png" width="30%" height="30%">
 
 
 
