@@ -24,8 +24,7 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 
 					
 ## 예상 시나리오 – flow chart
-![image](https://user-images.githubusercontent.com/79851987/142370338-83038c9f-db43-4397-b71c-018088caadee.png)
-
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370338-83038c9f-db43-4397-b71c-018088caadee.png" width="100%" height="100%">
 
 ## 기술블로그
 - 장윤주 : https://jmarble-dev.tistory.com/3, https://jmarble-dev.tistory.com/5
@@ -54,15 +53,14 @@ ___의류 이미지를 분석하여 어울리는 색상 조합과 의류 상품�
 
  1. 옷 추가 기능
  
- ![image](https://user-images.githubusercontent.com/79851987/142370389-13c45500-4e37-4565-a6e6-2dd9dfed18be.png)
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/142370389-13c45500-4e37-4565-a6e6-2dd9dfed18be.png" width="100%" height="100%">
  
  2. 옷장 기능
- 
- ![image](https://user-images.githubusercontent.com/79851987/144371991-f0b95c2b-496b-450d-a8d9-1727f8aa1e85.png)
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/144371991-f0b95c2b-496b-450d-a8d9-1727f8aa1e85.png" width="50%" height="50%">
  
  3. 통계 기능
- 
-![image](https://user-images.githubusercontent.com/79851987/144372031-f50f9ad6-23d6-4a86-a963-29c690f43dc8.png)
+ <p align="center"><img src="https://user-images.githubusercontent.com/79851987/144372031-f50f9ad6-23d6-4a86-a963-29c690f43dc8.png" width="50%" height="50%">
+
 
 
 ## 웹 – web.py
