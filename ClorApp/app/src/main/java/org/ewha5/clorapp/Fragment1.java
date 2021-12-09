@@ -1,18 +1,13 @@
 package org.ewha5.clorapp;
 
-import android.app.AlertDialog;
+import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ContentUris;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
-import android.graphics.ImageDecoder;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.os.Environment;
 import android.os.Handler;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,26 +31,27 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 /*윤주*/
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.io.filefilter.TrueFileFilter;
-import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.entity.StringEntity;
 import java.net.URL;
-import java.util.List;
 
 import android.util.Base64;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.tensorflow.lite.Interpreter;
 
 public class Fragment1 extends AppCompatActivity {
     private static final String TAG = "Fragment1";
@@ -117,13 +113,15 @@ public class Fragment1 extends AppCompatActivity {
             public void onClick(View v) {
                 //웹 서버로 연결
                 //showMessage();
+                Interpreter lite = getTfliteInterpreter("converted_model.tflite");
+                //lite.run(resultPhotoBitmap, resultPhotoBitmap);
 
                 Intent intent = new Intent(getApplicationContext(), ShowResult.class);
 
                 request();
                 //ProgressDialog pdialog
                 dialog = ProgressDialog.show(Fragment1.this, "", "서버에서 정보를 가져오는 중입니다.");
-
+                dialog.setCancelable(true);
                 //dialog.setMax((int) 50000);
                 //dialog.setProgress((int) 50000);
 
@@ -154,13 +152,11 @@ public class Fragment1 extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void run() {
-                Log.e(TAG, "HHHHHHHHHHHHHHHH");
                 if(Build.VERSION.SDK_INT > 8){
                     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                     StrictMode.setThreadPolicy(policy);
                 }
 
-                Log.e(TAG, "HEEEERRRREEEEEEE");
                 post(URL);
             }
             //서버 연결
@@ -183,14 +179,11 @@ public class Fragment1 extends AppCompatActivity {
             HttpURLConnection conn = null;
 
             conn = (HttpURLConnection) url1.openConnection();
-            Log.e(TAG, "1");
             conn.setRequestProperty("Accept-Encoding", "identity");
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
-            Log.e(TAG, "2");
             conn.setDoOutput(true);
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
-            Log.e(TAG, "3");
             bufferedWriter.write(obj.toString());
             bufferedWriter.flush();
             bufferedWriter.close();
@@ -244,7 +237,7 @@ public class Fragment1 extends AppCompatActivity {
 
 
     //서버 연결 후, 다음 화면 넘어가기 위한 메시지
-    private void showMessage() {
+    /*private void showMessage() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("안내");
         builder.setMessage("조합을 확인할까요?");
@@ -310,10 +303,26 @@ public class Fragment1 extends AppCompatActivity {
 
 
     }
+      */
 
-    /*
-    사진 촬영
-     */
+    private Interpreter getTfliteInterpreter(String modelPath) {
+        try {
+            return new Interpreter(loadModelFile(Fragment1.this, modelPath));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private MappedByteBuffer loadModelFile(Activity activity, String modelPath) throws IOException {
+        AssetFileDescriptor fileDescriptor = activity.getAssets().openFd(modelPath);
+        FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor());
+        FileChannel fileChannel = inputStream.getChannel();
+        long startOffset = fileDescriptor.getStartOffset();
+        long declaredLength = fileDescriptor.getDeclaredLength();
+        return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
+    }
 
     public void showPhotoCaptureActivity() {
 
@@ -397,7 +406,7 @@ public class Fragment1 extends AppCompatActivity {
         return outFile;
     }
 
-
+/*
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "PNG_" + timeStamp + "_";
@@ -406,7 +415,7 @@ public class Fragment1 extends AppCompatActivity {
         picturePath = image.getAbsolutePath();
         return image;
     }
-
+*/
     //사진 촬영 끝...
 
     //
@@ -604,6 +613,9 @@ public class Fragment1 extends AppCompatActivity {
                         setImage();
                     }
                     Toast.makeText(getApplicationContext(), "사진 업로드에 성공했습니다!", Toast.LENGTH_SHORT).show();
+
+
+
                     break;
 
             }
