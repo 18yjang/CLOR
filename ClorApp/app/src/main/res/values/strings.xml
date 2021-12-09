@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CLOR</string>
+
+    <string name="today_date_format">MM월 dd일</string>
+    <string name="today_date_string">O월 O일</string>
+
+    <string name="graph1_title">색상 조합 선택 비율</string>
+    <string name="graph2_title">만족도</string>
+
 </resources>

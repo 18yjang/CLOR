@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.view.View;
 
 /**
  * C'LOR 데이터베이스
@@ -147,11 +148,12 @@ public class ClorDatabase {
             // create table
             String CREATE_SQL = "create table " + TABLE_CLOR + "("
                     + "  _id INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT, "
-                    + "  CATEGORY TEXT DEFAULT'', "
-                    + "  COMB TEXT DEFAULT'', "
-                    + "  MOOD TEXT DEFAULT'', "
-                    + " PICTURE TEXT DEFAULT '' "
-                    +")";
+                    + "  CATEGORY TEXT DEFAULT '', "
+                    + "  COMB TEXT DEFAULT '', "
+                    + "  MOOD TEXT DEFAULT '', "
+                    + "  PICTURE TEXT DEFAULT '', "
+                    + "  CREATE_DATE TEXT DEFAULT CURRENT_TIMESTAMP "
+                    + ")";
 
             try {
                 db.execSQL(CREATE_SQL);
@@ -160,7 +162,9 @@ public class ClorDatabase {
             }
 
             // create index
-            String CREATE_INDEX_SQL = "create index " +  TABLE_CLOR +  "_IDX ON " + TABLE_CLOR ;
+            String CREATE_INDEX_SQL = "create index " + TABLE_CLOR + "_IDX ON " + TABLE_CLOR + "("
+                    + "CREATE_DATE"
+                    + ")";
             try {
                 db.execSQL(CREATE_INDEX_SQL);
             } catch(Exception ex) {
@@ -175,6 +179,7 @@ public class ClorDatabase {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             println("Upgrading database from version " + oldVersion + " to " + newVersion + ".");
         }
+
     }
 
     private void println(String msg) {

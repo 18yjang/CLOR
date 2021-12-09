@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -85,13 +86,14 @@ public class ClorAdapter extends RecyclerView.Adapter<ClorAdapter.ViewHolder>
         ImageView pictureExistsImageView;
         ImageView pictureImageView;
 
-        ImageView pictureExistsImageView2;
-
         TextView combTextView;
         TextView combTextView2;
 
         TextView categoryTextView;
         TextView categoryTextView2;
+
+        TextView dateTextView;
+        TextView dateTextView2;
 
         public ViewHolder(View itemView, final OnNoteItemClickListener listener, int layoutType) {
             super(itemView);
@@ -108,7 +110,10 @@ public class ClorAdapter extends RecyclerView.Adapter<ClorAdapter.ViewHolder>
 
             pictureExistsImageView = itemView.findViewById(R.id.pictureExistsImageView);
             pictureImageView = itemView.findViewById(R.id.pictureImageView);
-            pictureExistsImageView2 = itemView.findViewById(R.id.pictureExistsImageView2);
+            //pictureExistsImageView2 = itemView.findViewById(R.id.pictureExistsImageView2);
+
+            dateTextView = itemView.findViewById(R.id.dateTextView);
+            dateTextView2 = itemView.findViewById(R.id.dateTextView2);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -134,8 +139,11 @@ public class ClorAdapter extends RecyclerView.Adapter<ClorAdapter.ViewHolder>
 
             // set picture exists
             String picturePath = item.getPicture();
+            Log.d("ClorAdapter", "picturePath -> " + picturePath);
+
             if (picturePath != null && !picturePath.equals("")) {
                 pictureExistsImageView.setVisibility(View.VISIBLE);
+                pictureExistsImageView.setImageURI(Uri.parse("file://" + picturePath));
                 pictureImageView.setVisibility(View.VISIBLE);
                 pictureImageView.setImageURI(Uri.parse("file://" + picturePath));
 
@@ -143,15 +151,26 @@ public class ClorAdapter extends RecyclerView.Adapter<ClorAdapter.ViewHolder>
                 pictureExistsImageView.setVisibility(View.GONE);
                 pictureImageView.setVisibility(View.GONE);
                 pictureImageView.setImageResource(R.drawable.noimagefound);
+                //pictureExistsImageView.setImageResource(R.drawable.noimagefound);
             }
 
             //set combination
-            combTextView.setText(item.getComb());
-            combTextView2.setText(item.getComb());
+            String combination = item.getComb();
+            if(combination.equals("0")) {
+                combTextView.setText("보색 조합");
+                combTextView2.setText("보색 조합");
+            } else if (combination.equals("1")) {
+                combTextView.setText("유사색 조합");
+                combTextView2.setText("유사색 조합");
+            }
 
             //set category
             categoryTextView.setText(item.getCategory());
             categoryTextView2.setText(item.getCategory());
+
+            //set date
+            dateTextView.setText(item.getCreateDateStr());
+            dateTextView2.setText(item.getCreateDateStr());
 
         }
 

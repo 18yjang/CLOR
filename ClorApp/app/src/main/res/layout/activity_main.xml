@@ -28,7 +28,7 @@
             android:layout_height="75dp"
             android:fontFamily="serif"
             android:text="옷 추가"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#CDACA2" />
 
@@ -38,10 +38,19 @@
             android:layout_height="75dp"
             android:fontFamily="serif"
             android:text="통계"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="#CDACA2" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:fontFamily="serif"
+            android:text="옷장"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#CDACA2" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

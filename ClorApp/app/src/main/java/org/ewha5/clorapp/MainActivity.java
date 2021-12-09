@@ -24,9 +24,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
-    /**
-     * 데이터베이스 인스턴스
-     */
     public static ClorDatabase mDatabase = null;
 
     @Override
@@ -52,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*
         Button menu03Button = findViewById(R.id.button3);
         menu03Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, AppConstants.REQUEST_CODE_BUTTON3);
             }
         });
-                 */
 
 
         setPicturePath();
@@ -91,6 +86,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void setPicturePath() {
+        String sdcardPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+        AppConstants.FOLDER_PHOTO = sdcardPath + File.separator + "photo";
+    }
+
+    public void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    private void println(String data) {
+        Log.d(TAG, data);
+    }
+
     //데이터베이스 method
     protected void onDestroy() {
         super.onDestroy();
@@ -117,25 +125,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.d(TAG, "Note database is not open.");
         }
-
-    }
-
-    public void setPicturePath() {
-            String folderPath = getFilesDir().getAbsolutePath();
-            AppConstants.FOLDER_PHOTO = folderPath + File.separator + "photo";
-
-            File photoFolder = new File(AppConstants.FOLDER_PHOTO);
-            if (!photoFolder.exists()) {
-                photoFolder.mkdirs();
-            }
-        }
-
-    public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-    }
-
-    private void println(String data) {
-        Log.d(TAG, data);
     }
 
 

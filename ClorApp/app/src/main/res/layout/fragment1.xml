@@ -18,84 +18,63 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17" />
 
-    <Button
-        android:id="@+id/addButton1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/select_button"
-        android:fontFamily="serif"
-        android:text="사진 촬영"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:backgroundTint="#CDACA2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pictureImageView"
-        app:layout_constraintVertical_bias="0.128" />
-
-    <Button
-        android:id="@+id/addButton2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/select_button"
-        android:fontFamily="serif"
-        android:text="갤러리에서 선택"
-        android:textColor="@android:color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:backgroundTint="#CDACA2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.819"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pictureImageView"
-        app:layout_constraintVertical_bias="0.129" />
-
-    <Button
-        android:id="@+id/saveButton"
-        android:layout_width="315dp"
-        android:layout_height="55dp"
-        android:fontFamily="serif"
-        android:gravity="center"
-        android:text="조합 확인하러 GO!"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:backgroundTint="#93888C"
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="118dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pictureImageView"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.22000003">
 
-    <ImageView
-        android:id="@+id/showUp"
-        android:layout_width="292dp"
-        android:layout_height="357dp"
-        android:layout_marginBottom="87dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/pictureImageView"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="@+id/pictureImageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.257"
-        app:srcCompat="@drawable/cloth_ex" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/hidden"
-        android:layout_width="20dp"
-        android:layout_height="17dp"
-        android:text="Button"
-        app:backgroundTint="#FFFFFF"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.959"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621" />
+            <Button
+                android:id="@+id/addButton1"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/select_button"
+                android:fontFamily="serif"
+                android:text="사진 촬영"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#CDACA2" />
+
+            <Button
+                android:id="@+id/addButton2"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:background="@drawable/select_button"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="갤러리에서 선택"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#CDACA2" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="315dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="조합 확인하러 GO!"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="#93888C" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

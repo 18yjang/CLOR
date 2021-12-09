@@ -29,7 +29,7 @@ public class ShowResult3 extends AppCompatActivity {
     private static final String TAG = "ShowResult3";
 
     //전달받아야 하는 값 + [카테고리 값]
-    public String color_value = "#899cdc";
+    public String color_value = Fragment1.result_color[0];
     //
 
     ImageView final1;
@@ -54,12 +54,14 @@ public class ShowResult3 extends AppCompatActivity {
     Clor item;
     Context context;
     OnTabItemSelectedListener listener;
-    OnRequestListener requestListener;
+    SimpleDateFormat todayDateFormat;
+    String currentDateString;
 
     //받아오는 값
     String comb;
     String path;
     String type;
+    String date;
     //
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,11 +81,16 @@ public class ShowResult3 extends AppCompatActivity {
 
         //추가함 DB용
         comb = SecondIntent.getStringExtra("comb");
-        //path = SecondIntent.getStringExtra("path");
+        path = SecondIntent.getStringExtra("path");
         type = SecondIntent.getStringExtra("type");
+        date = getTime();
         //
 
-        path = "img01";
+        /* //확인용 msg
+        Toast.makeText(getApplicationContext(), path+" 파일경로 "+ type+ " 카테고리 ",
+                Toast.LENGTH_SHORT).show();
+        //*/
+
 
         //색상 변경(상의 기준) - 2.png 기준 [if와 else로 final1과 final2 위치 바꾸기]
         final1 = findViewById(R.id.final1);
@@ -138,31 +145,33 @@ public class ShowResult3 extends AppCompatActivity {
         moodSlider.setOnSlideListener(listener);
         moodSlider.setInitialIndex(2);
 
-
-        //평가도 저장****
+        //평가도 저장
         Button saveRate = findViewById(R.id.saverate);
         saveRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mMode == AppConstants.MODE_INSERT) {
                     saveNote();
-                }
-                /*else if(mMode == AppConstants.MODE_MODIFY) {
+                } else if(mMode == AppConstants.MODE_MODIFY) {
                     modifyNote();
-                }*/
+                }
+                /*
+                if (listener != null) {
+                    listener.onTabSelected(0);
+                }
+                */
             }
         });
 
     }
 
     //저장하는 코드
-    public void setMood(String mood) {
-        try {
-            moodIndex = Integer.parseInt(mood);
-            moodSlider.setInitialIndex(moodIndex);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
+    private String getTime() {
+        long now = System.currentTimeMillis();
+        Date date = new Date(now);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String getTime = dateFormat.format(date);
+        return getTime;
     }
 
     public void setItem(Clor item) {
@@ -170,65 +179,23 @@ public class ShowResult3 extends AppCompatActivity {
     }
 
     /*
-    public void applyItem() {
-        AppConstants.println("applyItem called.");
-
-        if (item != null) {
-            mMode = AppConstants.MODE_MODIFY;
-
-            setWeatherIndex(Integer.parseInt(item.getWeather()));
-            setAddress(item.getAddress());
-            setDateString(item.getCreateDateStr());
-            setContents(item.getContents());
-
-            String picturePath = item.getPicture();
-            AppConstants.println("picturePath : " + picturePath);
-
-            if (picturePath == null || picturePath.equals("")) {
-                pictureImageView.setImageResource(R.drawable.noimagefound);
-            } else {
-                setPicture(item.getPicture(), 1);
-            }
-
-            setMood(item.getMood());
-
-        } else {
-            mMode = AppConstants.MODE_INSERT;
-
-            setWeatherIndex(0);
-            setAddress("");
-
-            Date currentDate = new Date();
-            if (todayDateFormat == null) {
-                todayDateFormat = new SimpleDateFormat(getResources().getString(R.string.today_date_format));
-            }
-            currentDateString = todayDateFormat.format(currentDate);
-            AppConstants.println("currentDateString : " + currentDateString);
-            setDateString(currentDateString);
-
-            contentsInput.setText("");
-            pictureImageView.setImageResource(R.drawable.noimagefound);
-            setMood("2");
-        }
-
-    }
-    */
-
-    /*
      * 데이터베이스 레코드 추가
 
      */
+
+
 
     private void saveNote() {
 
         //데이터베이스 레코드 - id 고민
 
         String sql = "insert into " + ClorDatabase.TABLE_CLOR +
-                "(CATEGORY, COMB, MOOD, PICTURE) values(" +
+                "(CATEGORY, COMB, MOOD, PICTURE, CREATE_DATE) values(" +
                 "'"+ type + "', " +
                 "'"+ comb + "', " +
                 "'"+ moodIndex + "', " +
-                "'"+ path + "')";
+                "'"+ path + "', " +
+                "'"+ date  + "')";
 
         Log.d(TAG, "sql : " + sql);
         ClorDatabase database = ClorDatabase.getInstance(context);
@@ -248,6 +215,7 @@ public class ShowResult3 extends AppCompatActivity {
                     "   ,COMB = '" + comb + "'" +
                     "   ,MOOD = '" + moodIndex + "'" +
                     "   ,PICTURE = '" + path + "'" +
+                    "   ,CREATE_DATE = '" + date + "'" +
                     " where " +
                     "   _id = " + item._id;
 

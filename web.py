@@ -248,29 +248,28 @@ def rec():
 
         
 
-    if (similar > 15) :
-        print('유사 주의')
-
     print('유사 기준 : ', similar)
     print('가장 유사한 색상 인덱스 : ', index)
     result_color = rgb2hex(r, g, b)
     print('색상 : ', result_color)
 
-    print('#complement 조합 : ',best_pair_c) #complementary 배색 
+    print('#complement 조합 : ',best_pair_c) #complementary 배색
+    result_cpair = []
     for i in best_pair_c :
         r = int(xy[i][1])
         g = int(xy[i][2])
         b = int(xy[i][3])
-        result_cpair[i]=rgb2hex(r, g, b)
-        print(i, '번 색상', '( ',result_cpair[i], ')')
+        result_cpair.append(rgb2hex(r, g, b))
+        #print(i, '번 색상', '( ',result_cpair[i], ')')
 
     print('#tonal 조합 : ', best_pair_t) #tonal 배색
+    result_tpair = []
     for i in best_pair_t :
         r = int(xy[i][1])
         g = int(xy[i][2])
         b = int(xy[i][3])
-        result_tpair[i] = rgb2hex(r,g,b)
-        print(i, '번 색상', '( ',result_tpair[i], ')')
+        result_tpair.append(rgb2hex(r,g,b))
+        #print(i, '번 색상', '( ',result_tpair[i], ')')
     
     return jsonify(result_color, result_cpair[0], result_cpair[1], result_cpair[2],
                    result_tpair[0], result_tpair[1], result_tpair[2])

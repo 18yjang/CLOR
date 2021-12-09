@@ -15,7 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import lib.kingja.switchbutton.SwitchMultiButton;
 
@@ -25,8 +27,9 @@ public class ViewDB extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ClorAdapter adapter;
-
     Context context;
+    SimpleDateFormat todayDateFormat;
+
     OnTabItemSelectedListener listener;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +64,9 @@ public class ViewDB extends AppCompatActivity {
 
         adapter = new ClorAdapter();
 
-        adapter.addItem(new Clor(0, "블라우스", "보색 조합", "", ""));
-        adapter.addItem(new Clor(1, "바지", "유사색 조합", "", ""));
-        adapter.addItem(new Clor(2, "티셔츠", "유사색 조합", "", ""));
+        adapter.addItem(new Clor(0, "블라우스", "0", "0", null, "11월 10일"));
+        adapter.addItem(new Clor(1, "바지", "1", "0", null, "11월 11일"));
+        adapter.addItem(new Clor(2, "티셔츠", "1", "0", null, "11월 12일"));
 
         recyclerView.setAdapter(adapter);
 
@@ -93,7 +96,7 @@ public class ViewDB extends AppCompatActivity {
     public int loadClorListData() {
         AppConstants.println("loadClorListData called.");
 
-        String sql = "select _id, CATEGORY, COMB, MOOD, PICTURE from " + ClorDatabase.TABLE_CLOR ; //+ " order by _id desc"
+        String sql = "select _id, CATEGORY, COMB, MOOD, PICTURE, CREATE_DATE from " + ClorDatabase.TABLE_CLOR + " order by CREATE_DATE desc";
 
         int recordCount = -1;
         ClorDatabase database = ClorDatabase.getInstance(context);
@@ -113,11 +116,29 @@ public class ViewDB extends AppCompatActivity {
                 String comb = outCursor.getString(2);
                 String mood = outCursor.getString(3);
                 String picture = outCursor.getString(4);
+                String dateStr = outCursor.getString(5);
+                String createDateStr = null;
+                if (dateStr != null && dateStr.length() > 10) {
+                    try {
+                        Date inDate = AppConstants.dateFormat4.parse(dateStr);
+
+                        if (todayDateFormat == null) {
+                            todayDateFormat = new SimpleDateFormat(getResources().getString(R.string.today_date_format));
+                        }
+                        createDateStr = todayDateFormat.format(inDate);
+                        AppConstants.println("currentDateString : " + createDateStr);
+                        //createDateStr = AppConstants.dateFormat3.format(inDate);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    createDateStr = "";
+                }
 
                 AppConstants.println("#" + i + " -> " + _id + ", " + category + ", " +
-                        comb + ", " + mood + ", " + picture + ", " );
+                        comb + ", " + mood + ", " + picture + ", " + createDateStr);
 
-                items.add(new Clor(_id, category, comb, mood, picture));
+                items.add(new Clor(_id, category, comb, mood, picture, dateStr));
             }
 
             outCursor.close();

@@ -108,43 +108,16 @@
         app:layout_constraintTop_toTopOf="@+id/inputcolor"
         app:layout_constraintVertical_bias="0.236" />
 
-    <TextView
-        android:id="@+id/tonalexp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="유사한 색상의 조합은 조화롭고 차분한 인상을 줍니다."
-        android:textColor="#3A3A3A"
-        android:textSize="12sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/conexp"
-        app:layout_constraintVertical_bias="0.034" />
-
-    <ImageView
-        android:id="@+id/tonalicon2"
-        android:layout_width="45dp"
-        android:layout_height="39dp"
-        app:layout_constraintBottom_toTopOf="@+id/conexp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/select_comb"
-        app:layout_constraintVertical_bias="0.824"
-        app:srcCompat="@drawable/simicon" />
-
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="225dp"
         android:layout_height="110dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line3"
-        app:layout_constraintVertical_bias="0.003">
+        app:layout_constraintVertical_bias="0.023">
 
         <RadioButton
             android:id="@+id/choice1"
@@ -171,32 +144,28 @@
 
     <ImageView
         android:id="@+id/combicon2"
-        android:layout_width="52dp"
-        android:layout_height="37dp"
+        android:layout_width="64dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/tonalicon2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/select_comb"
-        app:layout_constraintVertical_bias="0.943"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/conicon" />
 
-    <TextView
-        android:id="@+id/conexp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="보색 관계의 색은 극적인 대비를 이루며 강한 인상을 줍니다."
-        android:textColor="#3A3A3A"
-        android:textSize="12sp"
-        android:textStyle="normal"
+    <ImageView
+        android:id="@+id/tonalicon2"
+        android:layout_width="63dp"
+        android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintTop_toTopOf="@+id/select_comb"
+        app:layout_constraintVertical_bias="0.274"
+        app:srcCompat="@drawable/simicon" />
 
     <Button
         android:id="@+id/select"
@@ -225,5 +194,37 @@
         app:layout_constraintTop_toBottomOf="@+id/editcategory"
         app:layout_constraintVertical_bias="0.524"
         app:srcCompat="@drawable/square" />
+
+    <LinearLayout
+        android:layout_width="319dp"
+        android:layout_height="53dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.353">
+
+        <TextView
+            android:id="@+id/conexp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="serif"
+            android:text="보색 관계의 색은 극적인 대비를 이루며 강한 인상을 줍니다."
+            android:textColor="#3A3A3A"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/tonalexp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="유사한 색상의 조합은 조화롭고 차분한 인상을 줍니다."
+            android:textColor="#3A3A3A"
+            android:textSize="12sp"
+            android:textStyle="normal" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

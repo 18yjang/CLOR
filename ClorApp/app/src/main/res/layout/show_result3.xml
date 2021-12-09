@@ -7,57 +7,6 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-28dp">
 
-    <Button
-        android:id="@+id/btnhome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="처음으로"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:backgroundTint="#CDACA2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
-
-    <Button
-        android:id="@+id/btnstatics"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="통계 확인"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:backgroundTint="#CDACA2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
-
-    <Button
-        android:id="@+id/btnweb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="웹 연결"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:backgroundTint="#CDACA2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
-
     <ImageView
         android:id="@+id/line6"
         android:layout_width="106dp"
@@ -133,22 +82,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.589" />
 
-    <Button
-        android:id="@+id/saverate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="저장"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:backgroundTint="@color/downpink"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831" />
-
     <ImageView
         android:id="@+id/line5"
         android:layout_width="106dp"
@@ -163,7 +96,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="110dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -277,6 +210,75 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/appicon2" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="99dp"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.07999998">
+
+        <Button
+            android:id="@+id/saverate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="serif"
+            android:text="저장"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:backgroundTint="@color/downpink" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnstatics"
+                android:layout_width="105dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="serif"
+                android:text="통계 확인"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#CDACA2" />
+
+            <Button
+                android:id="@+id/btnhome"
+                android:layout_width="105dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="serif"
+                android:text="처음으로"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#CDACA2" />
+
+            <Button
+                android:id="@+id/btnweb"
+                android:layout_width="105dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:fontFamily="serif"
+                android:text="웹 연결"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#CDACA2" />
+        </LinearLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

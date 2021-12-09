@@ -6,13 +6,15 @@ public class Clor {
     String comb;
     String mood;
     String picture;
+    String createDateStr;
 
-    public Clor(int _id, String category, String comb, String mood, String picture) {
+    public Clor(int _id, String category, String comb, String mood, String picture, String createDateStr) {
         this._id = _id;
         this.category = category;
         this.comb = comb;
         this.mood = mood;
         this.picture = picture;
+        this.createDateStr = createDateStr;
     }
 
     public int get_id() {
@@ -54,4 +56,14 @@ public class Clor {
     public void setPicture(String picture) {
         this.picture = picture;
     }
+
+    public String getCreateDateStr() {
+        return createDateStr;
+    }
+
+    public void setCreateDateStr(String createDateStr) {
+        this.createDateStr = createDateStr;
+    }
+
+
 }

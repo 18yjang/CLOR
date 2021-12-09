@@ -19,9 +19,9 @@ public class ShowResult2 extends AppCompatActivity {
     private static final String TAG = "ShowResult2";
 
     //전달 받아야하는 값
-    public String color_value = "#899cdc";
-    public String[] comp = {"#b9c386" , "#d0d1d3", "#DBC588"};
-    public String[] tonal = {"#434c75", "#6e86a2", "#2c67a9"};
+    public String color_value = Fragment1.result_color[0];
+    public String[] comp = {Fragment1.result_color[1], Fragment1.result_color[2], Fragment1.result_color[3]};
+    public String[] tonal = {Fragment1.result_color[4], Fragment1.result_color[5], Fragment1.result_color[6]};
     //
 
     String finalcolor;
@@ -45,6 +45,7 @@ public class ShowResult2 extends AppCompatActivity {
     String choice_comb;
     String path;
     String type;
+    //
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,13 +65,13 @@ public class ShowResult2 extends AppCompatActivity {
         type = secondIntent.getStringExtra("type");
         //
 
-        /*확인용 msg
-        Toast.makeText(getApplicationContext(), path+" 파일경로"+ type+ "카테고리",
+        /* //확인용 msg
+        Toast.makeText(getApplicationContext(), path+" 파일경로 "+ type+ " 카테고리 ",
                 Toast.LENGTH_SHORT).show();
         */
 
         if(choice == 0){
-            choice_comb = "보색 조합";
+            choice_comb = "0";
             tonalicon2.setVisibility(View.INVISIBLE);
             //색상 변경 - 보색으로 2.png 기준
             upper1 = findViewById(R.id.upper1);
@@ -92,7 +93,7 @@ public class ShowResult2 extends AppCompatActivity {
             under3.bringToFront();
 
         } else if (choice == 1){
-            choice_comb = "유사색 조합";
+            choice_comb = "1";
             conicon2.setVisibility(View.INVISIBLE);
             upper1 = findViewById(R.id.upper1);
             upper1.setColorFilter(Color.parseColor(color_value), PorterDuff.Mode.SRC_IN);
@@ -167,7 +168,7 @@ public class ShowResult2 extends AppCompatActivity {
                 //
 
                 /*확인용 msg
-                Toast.makeText(getApplicationContext(), path+" :파일경로"+ type+ " :카테고리"+choice_comb+ " :선택",
+                Toast.makeText(getApplicationContext(), path+" :파일경로  "+ type+ " :카테고리  "+choice_comb+ " :선택",
                         Toast.LENGTH_SHORT).show();
                 */
 
