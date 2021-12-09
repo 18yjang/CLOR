@@ -1,3 +1,4 @@
 
 run/save_ckp_frozen.h5
 run/clor.h5
+ClorApp/app/src/main/assets/converted_model.tflite
