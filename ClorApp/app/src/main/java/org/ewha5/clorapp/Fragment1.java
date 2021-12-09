@@ -32,6 +32,7 @@ import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -117,6 +118,9 @@ public class Fragment1 extends AppCompatActivity {
                 //lite.run(resultPhotoBitmap, resultPhotoBitmap);
 
                 Intent intent = new Intent(getApplicationContext(), ShowResult.class);
+
+
+                //startActivityForResult(intent, AppConstants.REQ_SHOW_COMBINATION);
 
                 request();
                 //ProgressDialog pdialog
@@ -212,6 +216,7 @@ public class Fragment1 extends AppCompatActivity {
             }
             Intent intent = new Intent(getApplicationContext(), ShowResult.class);
             dialog.dismiss();
+            intent.putExtra("path", picturePath);
             startActivityForResult(intent, AppConstants.REQ_SHOW_COMBINATION);
 
 
@@ -482,23 +487,6 @@ public class Fragment1 extends AppCompatActivity {
 
                      */
 
-                    /*if (intent != null && resultCode == RESULT_OK ) {
-                        Log.e(TAG, "IM HERERERERERE233333333333");
-
-                        Uri fileUri_1 = getUriFromPath(picturePath);
-
-
-                        Log.d(TAG, "fileUri : " + fileUri_1);
-
-                        File file = new File(picturePath);
-
-                    }
-
-                        tempFile = new File(picturePath);
-
-                        setImage();
-                        Log.e(TAG, "IM HERERERERERE~~~~~~~~~~~~~~~");
-*/
 
                     //setPicture(file.getAbsolutePath(), 8);
                     resultPhotoBitmap = decodeSampledBitmapFromResource(file, pictureImageView.getWidth(), pictureImageView.getHeight());
@@ -614,7 +602,28 @@ public class Fragment1 extends AppCompatActivity {
                     }
                     Toast.makeText(getApplicationContext(), "사진 업로드에 성공했습니다!", Toast.LENGTH_SHORT).show();
 
+                    Bitmap resizeBitmap = null;
+                    int width = resultPhotoBitmap.getWidth();
+                    int height = resultPhotoBitmap.getHeight();
+                    int newWidth = width;
+                    int newHeight = height;
+                    float rate = 0.0f;
 
+                    if(width > height){
+                        if(1000 < width){
+                            rate = 1000 / (float)width;
+                            newHeight = (int) (height*rate);
+                            newWidth = 1000;
+                        }
+                    }
+                    else{
+                        if(1000 < height){
+                            rate = 1000 / (float) height;
+                            newWidth = (int)(width*rate);
+                            newHeight = 1000;
+                        }
+                    }
+                    resultPhotoBitmap = Bitmap.createScaledBitmap(resultPhotoBitmap, newWidth, newHeight, true);
 
                     break;
 
